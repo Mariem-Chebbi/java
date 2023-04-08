@@ -22,12 +22,11 @@ import javafx.stage.Stage;
  * @author Chebbi_Mariem
  */
 public class EduSex extends Application {
-    private ChoiceBox<String> myChoiceBox;
     
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/AjoutCreneauHoraire.fxml")); 
+        Parent root = FXMLLoader.load(getClass().getResource("/")); 
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
