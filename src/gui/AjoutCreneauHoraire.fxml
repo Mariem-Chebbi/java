@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutCreneauHoraireController">
+    <children>
+        <Button layoutX="276.0" layoutY="310.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: black;" text="Ajouter" />
+        <Label layoutX="99.0" layoutY="118.0" text="Jour" />
+        <Label layoutX="99.0" layoutY="178.0" text="Heure début" />
+        <Label layoutX="99.0" layoutY="244.0" text="Heure fin" />
+        <TextField layoutX="203.0" layoutY="112.0" />
+     <ChoiceBox fx:id="myChoiceBox" layoutX="70.0" layoutY="62.0" prefWidth="150.0" />
+        
+    </children>
+</AnchorPane>
