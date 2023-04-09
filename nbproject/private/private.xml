@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/AjoutCreneauHoraire.fxml</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/edusex/EduSex.java</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/test/TestEmailSender.java</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/utils/EmailSender.java</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/test/TestCreneauHoraire.java</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/services/ServiceCreneauHoraire.java</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/test/TestRendezVous.java</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/AjoutCreneauHoraireController.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/EdusexProjectv0/src/edusex/utils/MyDB.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/EdusexProjectv0/src/edusex/gui/AddProductController.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/EdusexProjectv0/src/edusexprojectv0/MainFXML.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/EdusexProjectv0/src/edusexprojectv0/EdusexProjectv0.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/EdusexProjectv0/src/edusex/gui/ProductMain.java</file>
         </group>
     </open-files>
 </project-private>
