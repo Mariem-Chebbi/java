@@ -1,20 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutCreneauHoraireController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="770.0" prefWidth="1269.0" style="-fx-background-color: #E7E8FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjoutCreneauHoraireController">
+    <stylesheets>
+        <URL value="@AjoutCreneauHoraire.css" />
+    </stylesheets>
     <children>
-        <Button layoutX="276.0" layoutY="310.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: black;" text="Ajouter" />
-        <Label layoutX="99.0" layoutY="118.0" text="Jour" />
-        <Label layoutX="99.0" layoutY="178.0" text="Heure début" />
-        <Label layoutX="99.0" layoutY="244.0" text="Heure fin" />
-        <TextField layoutX="203.0" layoutY="112.0" />
-     <ChoiceBox fx:id="myChoiceBox" layoutX="70.0" layoutY="62.0" prefWidth="150.0" />
-        
+        <MenuBar prefHeight="50.0" prefWidth="1269.0" styleClass="menuClass">
+            <menus>
+                <Menu mnemonicParsing="false" text="Créneau Horaire">
+                    <items>
+                        <MenuItem fx:id="miList" mnemonicParsing="false" onAction="#goToList" text="List" />
+                        <MenuItem fx:id="goToAjout" mnemonicParsing="false" text="Ajout" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Rendez-vous">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToListRDV" text="List" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToHistorique" text="Historique" />                  
+                        <MenuItem mnemonicParsing="false" onAction="#goToAjoutRDV" text="Prendre rendez-vous" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane layoutX="368.0" layoutY="163.0" prefHeight="444.0" prefWidth="533.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+            <children>
+                <Label layoutX="92.0" layoutY="119.0" text="Jour">
+                    <font>
+                        <Font name="Segoe UI Black" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="51.0" layoutY="179.0" text="Heure début">
+                    <font>
+                        <Font name="Segoe UI Black" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="69.0" layoutY="245.0" text="Heure fin">
+                    <font>
+                        <Font name="Segoe UI Black" size="15.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="cbJour" layoutX="165.0" layoutY="114.0" prefHeight="28.0" prefWidth="199.0" />
+                <ChoiceBox fx:id="cbHeureDebut" layoutX="165.0" layoutY="174.0" prefHeight="28.0" prefWidth="199.0" />
+                <ChoiceBox fx:id="cbHeureFin" layoutX="165.0" layoutY="240.0" prefHeight="28.0" prefWidth="199.0" />
+                <RadioButton fx:id="rbEtat" layoutX="51.0" layoutY="301.0" mnemonicParsing="false" text="Fermé" textAlignment="RIGHT" />
+                <Button layoutX="156.0" layoutY="349.0" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="32.0" prefWidth="222.0" text="Ajouter" />
+           
+            <Label layoutX="152.0" layoutY="43.0" text="Définir les horaires">
+               <font>
+                  <Font name="Segoe UI Black" size="24.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    
+     
+     
     </children>
 </AnchorPane>

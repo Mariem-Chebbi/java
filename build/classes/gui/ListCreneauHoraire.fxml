@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="770.0" prefWidth="1269.0" style="-fx-background-color: E7E8FF;" styleClass="mainFxmlClass" stylesheets="@listcreneauhoraire.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ListCreneauHoraireController">
+    <children>
+        <MenuBar layoutY="1.0" prefHeight="45.0" prefWidth="1269.0" styleClass="menuClass">
+            <menus>
+                <Menu mnemonicParsing="false" text="Créneau Horaire">
+                    <items>
+                        <MenuItem fx:id="miList" mnemonicParsing="false" onAction="#goToList" text="List" />
+                        <MenuItem fx:id="goToAjout" mnemonicParsing="false" onAction="#goToAjout" text="Ajout" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Rendez-vous">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToListRDV" text="List" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToHistorique" text="Historique" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToAjoutRDV" text="Prendre rendez-vous" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TableView fx:id="tv" layoutX="92.0" layoutY="94.0" prefHeight="343.0" prefWidth="552.0" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="colJour" prefWidth="75.0" text="Jour" />
+                <TableColumn fx:id="colHeureDebut" prefWidth="163.0" text="Heure début" />
+                <TableColumn fx:id="ColHeureFin" prefWidth="137.0" text="Heure fin" />
+                <TableColumn fx:id="colEtat" prefWidth="176.0" text="Fermé" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnEdit" layoutX="589.0" layoutY="490.0" mnemonicParsing="false" onAction="#btnEditData" text="Editer" />
+        <AnchorPane layoutX="681.0" layoutY="86.0" prefHeight="449.0" prefWidth="566.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+            <children>
+                <Label fx:id="label" layoutX="38.0" layoutY="20.0" text="Editer">
+               <font>
+                  <Font name="Segoe UI Black" size="19.0" />
+               </font></Label>
+                <Label layoutX="38.0" layoutY="117.0" text="Heure début">
+               <font>
+                  <Font name="Segoe UI Black" size="15.0" />
+               </font></Label>
+                <Label layoutX="38.0" layoutY="189.0" text="Heure fin">
+               <font>
+                  <Font name="Segoe UI Black" size="15.0" />
+               </font></Label>
+                <ChoiceBox fx:id="cbHeureDebut" layoutX="168.0" layoutY="112.0" prefWidth="150.0" style="-fx-background-color: E7E8FF;" />
+                <ChoiceBox fx:id="cbHeureFin" layoutX="168.0" layoutY="184.0" prefWidth="150.0" style="-fx-background-color: E7E8FF;" />
+                <RadioButton fx:id="rbEtat" layoutX="39.0" layoutY="256.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Fermé" textAlignment="RIGHT">
+               <font>
+                  <Font name="Segoe UI Black" size="15.0" />
+               </font></RadioButton>
+            <Button layoutX="318.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnValider" text="Valider" />
+            <TextField fx:id="tfId" layoutX="342.0" layoutY="112.0" />
+            <TextField fx:id="tfJour" layoutX="342.0" layoutY="184.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

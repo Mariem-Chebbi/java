@@ -5,7 +5,7 @@
  */
 package entities;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,7 +13,7 @@ import java.sql.Date;
  */
 public class RendezVous {
     private Long id;
-    private Date date_rdv;
+    private LocalDate date_rdv;
     private int heure;
     private User personnel_id;
     private User client_id;
@@ -21,14 +21,14 @@ public class RendezVous {
     public RendezVous() {
     }
 
-    public RendezVous(Date date_rdv, int heure, User personnel_id, User client_id) {
+    public RendezVous(LocalDate date_rdv, int heure, User personnel_id, User client_id) {
         this.date_rdv = date_rdv;
         this.heure = heure;
         this.personnel_id = personnel_id;
         this.client_id = client_id;
     }
 
-    public RendezVous(Long id, Date date_rdv, int heure, User personnel_id, User client_id) {
+    public RendezVous(Long id, LocalDate date_rdv, int heure, User personnel_id, User client_id) {
         this.id = id;
         this.date_rdv = date_rdv;
         this.heure = heure;
@@ -44,11 +44,11 @@ public class RendezVous {
         this.id = id;
     }
 
-    public Date getDate_rdv() {
+    public LocalDate getDate_rdv() {
         return date_rdv;
     }
 
-    public void setDate_rdv(Date date_rdv) {
+    public void setDate_rdv(LocalDate date_rdv) {
         this.date_rdv = date_rdv;
     }
 

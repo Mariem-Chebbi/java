@@ -32,7 +32,9 @@ public class TestCreneauHoraire {
         
         //sc.ajouter(cr);
         sc.modifier(cr);
-        System.out.println(sc.afficher(1L));
+        //System.out.println(sc.afficher(1L));
+        
+        System.out.println(sc.getCreneauHoraire("lundi", 1l));
     }
 
 }
