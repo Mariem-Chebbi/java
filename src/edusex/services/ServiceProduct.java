@@ -36,7 +36,7 @@ public class ServiceProduct implements IntServiceProduct<Product>{
     @Override
     public void addProduct(Product p) {
         try {
-            PreparedStatement pre = con.prepareStatement("INSERT INTO `edusex`.`Product` (`libelle`,`description`,`image`,`quantite`) VALUES (?,?,?,?);");
+            PreparedStatement pre = con.prepareStatement("INSERT INTO `edusex01`.`Product` (`libelle`,`description`,`image`,`quantite`) VALUES (?,?,?,?);");
             pre.setString(1, p.getLibelle());
             pre.setString(2,p.getDescription());
             pre.setString(3, p.getImage());
@@ -62,7 +62,7 @@ public class ServiceProduct implements IntServiceProduct<Product>{
         try {
             Ste= con.createStatement();
        
-        String req = "DELETE FROM `edusex`.`Product` WHERE `Product`.`id`='"+p.getId()+"';";
+        String req = "DELETE FROM `edusex01`.`Product` WHERE `Product`.`id`='"+p.getId()+"';";
             Ste.executeUpdate(req);
         }catch (SQLException ex) {
              System.out.println("err"+ex.getMessage());
@@ -79,7 +79,7 @@ public class ServiceProduct implements IntServiceProduct<Product>{
         try {
             Ste= con.createStatement();
        
-        String req = "UPDATE `edusex`.`Product`SET`libelle`='"+p.getLibelle()+"',`description`='"+p.getDescription()+"',`image`='"+p.getImage()+"',`quantite`='"+p.getQuantite()+"' WHERE `Product`.`id`='"+p.getId()+"';";
+        String req = "UPDATE `edusex01`.`Product`SET`libelle`='"+p.getLibelle()+"',`description`='"+p.getDescription()+"',`image`='"+p.getImage()+"',`quantite`='"+p.getQuantite()+"' WHERE `Product`.`id`='"+p.getId()+"';";
             Ste.executeUpdate(req);
         }catch (SQLException ex) {
              System.out.println("err"+ex.getMessage());
@@ -98,7 +98,7 @@ public class ServiceProduct implements IntServiceProduct<Product>{
         try {
             Ste= con.createStatement();
        
-        String req = "SELECT * FROM `edusex`.`Product`";
+        String req = "SELECT * FROM `edusex01`.`Product`";
             ResultSet res= Ste.executeQuery(req);
             while(res.next()){
                 int id = res.getInt(1);

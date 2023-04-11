@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class MyDB {
 
-    String url = "jdbc:mysql://localhost:3306/edusex";
+    String url = "jdbc:mysql://localhost:3306/edusex01";
     String login = "root";
     String pwd = "";
     

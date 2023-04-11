@@ -26,7 +26,7 @@ public class MainFXML extends Application{
     @Override
     public void start(Stage primaryStage) {
                 try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../edusex/gui/addProduct.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../edusex/gui/addBlog.fxml"));
             Parent root = loader.load();
             Scene sc = new Scene(root);
             primaryStage.setTitle("Personnes");

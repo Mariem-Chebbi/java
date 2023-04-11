@@ -9,12 +9,13 @@ import edusex.entities.Product;
 import edusex.entities.Reservation;
 import edusex.utils.MyDB;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 /**
  *
@@ -36,20 +37,25 @@ public class ServiceReservation implements IntServiceReservation<Reservation>{
     @Override
     public void addReservation(Reservation r) {
         try {
-            PreparedStatement pre = con.prepareStatement("INSERT INTO `edusex`.`Reservation` (`quantite`,`date_reservation`,`etat`,`user_id`) VALUES (?,?,?,?);");
-            PreparedStatement pre2 = con.prepareStatement("INSERT INTO `edusex`.`Reservation_product` (`reservation_id`,`product_id`) VALUES (?,?);");
+            PreparedStatement pre = con.prepareStatement("INSERT INTO `edusex01`.`Reservation` (`quantite`,`date_reservation`,`etat`) VALUES (?,?,?);",Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement pre2 = con.prepareStatement("INSERT INTO `edusex01`.`Reservation_product` (`reservation_id`,`product_id`) VALUES (?,?);");
             pre.setInt(1, r.getQuantite());
             pre.setDate(2, (java.sql.Date) r.getDateReservation());
             pre.setString(3,r.getEtat());
-            pre.setInt(5, r.getUserId());
+           // pre.setInt(4, r.getUserId());
+            pre.executeUpdate();
             
-            
-            pre2.setInt(0, r.getId());
-            pre2.setInt(1, r.getIdProduit());
+            ResultSet generatedKeys = pre.getGeneratedKeys();
+            while(generatedKeys.next()){
+            r.setId(generatedKeys.getInt(1));}
+            pre2.setInt(1, r.getId());
+            pre2.setInt(2, r.getIdProduit());
             
             
            
-            pre.executeUpdate();
+            
+            
+            
             pre2.executeUpdate();
                     
             
@@ -69,7 +75,7 @@ public class ServiceReservation implements IntServiceReservation<Reservation>{
         try {
             Ste= con.createStatement();
        
-        String req = "DELETE FROM `edusex`.`Reservation` WHERE `Reservation`.`id`='"+r.getId()+"';";
+        String req = "DELETE FROM `edusex01`.`Reservation` WHERE `Reservation`.`id`='"+r.getId()+"';";
             Ste.executeUpdate(req);
         }catch (SQLException ex) {
              System.out.println("err"+ex.getMessage());
@@ -82,8 +88,17 @@ public class ServiceReservation implements IntServiceReservation<Reservation>{
     
     
     @Override
-    public void updateReservation(Reservation r) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void updateReservation(Reservation p) {
+        try {
+            Ste= con.createStatement();
+       
+        String req = "UPDATE `edusex01`.`Reservation`SET`quantite`='"+p.getQuantite()+"',`date_reservation`='"+p.getDateReservation()+"',`etat`='"+p.getEtat()+"' WHERE `Reservation`.`id`='"+p.getId()+"';";
+        String req2 = "UPDATE `edusex01`.`Reservation_product`SET`product_id`='"+p.getIdProduit()+"' WHERE `Reservation_product`.`reservation_id`='"+p.getId()+"';";
+            Ste.executeUpdate(req);
+            Ste.executeUpdate(req2);
+        }catch (SQLException ex) {
+             System.out.println("err"+ex.getMessage());
+        }
     }
 
     
@@ -97,7 +112,7 @@ public class ServiceReservation implements IntServiceReservation<Reservation>{
         try {
             Ste= con.createStatement();
        
-        String req = "SELECT * FROM `edusex`.`Reservation`JOIN`edusex`.`Reservation_Product`ON`id`=`Reservation_id`";
+        String req = "SELECT * FROM `edusex01`.`Reservation`JOIN`edusex01`.`Reservation_Product`ON`id`=`Reservation_id`";
             ResultSet res= Ste.executeQuery(req);
             while(res.next()){
                 int id = res.getInt(1);
@@ -117,6 +132,62 @@ public class ServiceReservation implements IntServiceReservation<Reservation>{
              System.out.println("err"+ex.getMessage());
         }
         return pers;
+    }
+    
+    public Product getClientById(int clientId) {
+    Product f = null;
+    
+        try {
+            Ste= con.createStatement();
+       
+        String req = "SELECT * FROM `edusex01`.`Product` WHERE `Product`.`id`='"+clientId+"'; ";
+            ResultSet res= Ste.executeQuery(req);
+            while(res.next()){
+                int id = res.getInt(1);
+                //int certificationId = res.getInt(1);
+                String libelle = res.getString(2);
+                String description = res.getString(3);
+                String image = res.getString(4);
+                int quantite = res.getInt(5);
+                
+                
+                 f =new Product(id, libelle, description, quantite,image);
+                
+            }
+            
+            
+         } catch (SQLException ex) {
+             System.out.println("err"+ex.getMessage());
+        }
+        return f;
+    }
+    
+    public String getUserById(int usertId) {
+    String nom = "";
+    
+        try {
+            Ste= con.createStatement();
+       
+        String req = "SELECT * FROM `edusex01`.`User` WHERE `User`.`id`='"+usertId+"'; ";
+            ResultSet res= Ste.executeQuery(req);
+            while(res.next()){
+                //int id = res.getInt(1);
+                //int certificationId = res.getInt(1);
+                 nom = res.getString(5);
+                //String description = res.getString(3);
+                //String image = res.getString(4);
+                //int quantite = res.getInt(5);
+                
+                
+                // f =new Product(id, libelle, description, quantite,image);
+                
+            }
+            
+            
+         } catch (SQLException ex) {
+             System.out.println("err"+ex.getMessage());
+        }
+        return nom;
     }
     
 }

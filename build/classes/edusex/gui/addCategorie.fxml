@@ -11,19 +11,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="787.0" prefWidth="1283.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AddReservationController">
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="787.0" prefWidth="1283.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AddCategorieController">
    <items>
-      <AnchorPane prefHeight="785.0" prefWidth="85.0" style="-fx-background-color: #2f4050;">
+      <AnchorPane prefHeight="841.0" prefWidth="218.0" style="-fx-background-color: #2f4050;">
          <children>
-            <VBox layoutX="-8.0" layoutY="164.0" prefHeight="250.0" prefWidth="211.0">
-               <children>
-                  <Button fx:id="BtnBlog" mnemonicParsing="false" onAction="#BtnBlog" prefHeight="77.0" prefWidth="215.0" style="-fx-background-color: #1ab394;" text="Blog" textFill="WHITE" />
-                  <Button fx:id="Btncategorie" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Btncategorie" prefHeight="83.0" prefWidth="215.0" style="-fx-background-color: #1ab394;" text="Catégorie" textFill="WHITE" />
-               </children>
-            </VBox>
+            <VBox layoutX="-21.0" layoutY="520.0" prefHeight="250.0" prefWidth="203.0" />
+            <Button fx:id="BlogBTN" layoutX="2.0" layoutY="213.0" mnemonicParsing="false" onAction="#goToBlog" prefHeight="34.0" prefWidth="212.0" style="-fx-background-color: #1ab394;" text="Blog" textFill="#fffdfd" />
+            <Button fx:id="reservationBTN" layoutX="2.0" layoutY="267.0" mnemonicParsing="false" onAction="#goToCategorie" prefHeight="34.0" prefWidth="213.0" style="-fx-background-color: #1ab394;" text="Categorie" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="739.0" prefWidth="992.0" style="-fx-background-color: #f3f3f4;">
+      <AnchorPane prefHeight="764.0" prefWidth="1208.0" style="-fx-background-color: #f3f3f4;">
          <children>
             <Label layoutX="204.0" layoutY="273.0" prefHeight="25.0" prefWidth="76.0" text="libelle : ">
                <font>
@@ -39,7 +36,7 @@
             <TableView fx:id="tab" layoutX="584.0" layoutY="162.0" onMouseClicked="#choisirProduit" prefHeight="532.0" prefWidth="477.0">
                <columns>
                   <TableColumn fx:id="idCOL" prefWidth="102.0" text="ID" />
-                  <TableColumn fx:id="clientCOL" prefWidth="221.0" text="libelle" />
+                  <TableColumn fx:id="libelleCOL" prefWidth="221.0" text="libelle" />
                </columns>
             </TableView>
             <Separator layoutX="544.0" layoutY="59.0" orientation="VERTICAL" prefHeight="689.0" prefWidth="6.0" />
@@ -55,11 +52,11 @@
                   <Font name="Arial Rounded MT Bold" size="22.0" />
                </font>
             </Label>
-            <Button fx:id="submitBTN" layoutX="215.0" layoutY="478.0" mnemonicParsing="false" onAction="#ajouterReservation" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Enregistrer" textFill="WHITE" />
+            <Button fx:id="submitBTN" layoutX="215.0" layoutY="478.0" mnemonicParsing="false" onAction="#ajouterCategorie" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Enregistrer" textFill="WHITE" />
             <Button fx:id="cancelBTN" layoutX="215.0" layoutY="531.0" mnemonicParsing="false" onAction="#reset" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Annuler" textFill="WHITE" />
-            <Button layoutX="379.0" layoutY="578.0" mnemonicParsing="false" onAction="#supReservation" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Supprimer" textFill="WHITE" />
-            <Button layoutX="216.0" layoutY="578.0" mnemonicParsing="false" onAction="#modifierReservation" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Modifier" textFill="WHITE" />
-            <TextField layoutX="287.0" layoutY="273.0" />
+            <Button layoutX="379.0" layoutY="578.0" mnemonicParsing="false" onAction="#supCategorie" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Supprimer" textFill="WHITE" />
+            <Button layoutX="216.0" layoutY="578.0" mnemonicParsing="false" onAction="#modifierCategorie" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Modifier" textFill="WHITE" />
+            <TextField fx:id="libelle" layoutX="287.0" layoutY="273.0" />
          </children>
       </AnchorPane>
    </items>

@@ -10,30 +10,31 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AddProductController">
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AddBlogController">
   <items>
       <BorderPane>
          <center>
             <AnchorPane prefHeight="876.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f4;">
                <children>
-                  <Label layoutX="217.0" layoutY="174.0" prefHeight="27.0" prefWidth="56.0" text="libelle:">
+                  <Label layoutX="187.0" layoutY="174.0" prefHeight="27.0" prefWidth="56.0" text="libelle:">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="labelTF" layoutX="289.0" layoutY="170.0" prefHeight="34.0" prefWidth="200.0" promptText="label du produit" />
-                  <TextArea fx:id="descTF" layoutX="283.0" layoutY="272.0" prefHeight="62.0" prefWidth="200.0" promptText="description du produit" />
-                  <Label layoutX="173.0" layoutY="295.0" text="Description : ">
+                  <TextField fx:id="libelleTF" layoutX="289.0" layoutY="170.0" prefHeight="34.0" prefWidth="200.0" promptText="label du produit" />
+                  <TextArea fx:id="descTF" layoutX="283.0" layoutY="297.0" prefHeight="62.0" prefWidth="200.0" promptText="description du produit" />
+                  <Label layoutX="180.0" layoutY="295.0" text="Description : ">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="190.0" layoutY="379.0" prefHeight="25.0" prefWidth="70.0" text="auteur:">
+                  <Label layoutX="190.0" layoutY="446.0" prefHeight="25.0" prefWidth="70.0" text="auteur:">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="13.0" />
                      </font>
@@ -48,28 +49,28 @@
                         <Font name="Arial Rounded MT Bold" size="22.0" />
                      </font>
                   </Label>
-                  <Button fx:id="imageBTN" layoutX="283.0" layoutY="505.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #1ab394;" text="Choisire une image" textFill="WHITE" />
+                  <Button fx:id="imageBTN" layoutX="289.0" layoutY="506.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #1ab394;" text="Choisire une image" textFill="WHITE" />
                   <TextField fx:id="imageTF" layoutX="96.0" layoutY="303.0" visible="false" />
-                  <Button fx:id="submitBTN" layoutX="197.0" layoutY="549.0" mnemonicParsing="false" onAction="#ajouterProduit" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Enregistrer" textFill="WHITE" />
-                  <Button fx:id="cancelBTN" layoutX="197.0" layoutY="613.0" mnemonicParsing="false" onAction="#reset" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Annuler" textFill="WHITE" />
+                  <Button fx:id="submitBTN" layoutX="197.0" layoutY="623.0" mnemonicParsing="false" onAction="#ajouter_blog" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Enregistrer" textFill="WHITE" />
+                  <Button fx:id="cancelBTN" layoutX="197.0" layoutY="670.0" mnemonicParsing="false" onAction="#reset" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Annuler" textFill="WHITE" />
                   <Button fx:id="backBTN" layoutX="943.0" layoutY="19.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #1ab394;" text="Retour" textFill="WHITE" />
-                  <TableView fx:id="tab" layoutX="584.0" layoutY="162.0" onMouseClicked="#choisirProduit" prefHeight="532.0" prefWidth="477.0">
+                  <TableView fx:id="tab" layoutX="584.0" layoutY="162.0" onMouseClicked="#choisirBlog" prefHeight="377.0" prefWidth="477.0">
                     <columns>
                       <TableColumn fx:id="idCOL" prefWidth="55.0" text="ID" />
                       <TableColumn fx:id="labelCOL" prefWidth="54.0" text="libelle" />
-                        <TableColumn fx:id="descCOL" prefWidth="83.0" text="Description" />
-                        <TableColumn fx:id="quentCOL" prefWidth="68.0" text="auteur" />
-                        <TableColumn fx:id="imageCOL" prefWidth="35.0" text="Image" />
-                        <TableColumn fx:id="labelCOL1" prefWidth="79.0" text="libelle" />
-                        <TableColumn fx:id="labelCOL11" prefWidth="79.0" text="date" />
+                        <TableColumn fx:id="categorieCOL" prefWidth="83.0" text="categorie" />
+                        <TableColumn fx:id="desCOL" prefWidth="68.0" text="description" />
+                        <TableColumn fx:id="dateCOL" prefWidth="35.0" text="date" />
+                        <TableColumn fx:id="AUTRCOLL" prefWidth="79.0" text="auteur" />
+                        <TableColumn fx:id="imagecoll" prefWidth="79.0" text="image" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TextField fx:id="quentTF" layoutX="283.0" layoutY="374.0" prefHeight="34.0" prefWidth="200.0" />
-                  <Button layoutX="359.0" layoutY="683.0" mnemonicParsing="false" onAction="#supProduit" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Supprimer" textFill="WHITE" />
-                  <Button layoutX="201.0" layoutY="677.0" mnemonicParsing="false" onAction="#modifierProduit" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Modifier" textFill="WHITE" />
+                  <TextField fx:id="auteurTF" layoutX="270.0" layoutY="441.0" prefHeight="34.0" prefWidth="200.0" />
+                  <Button fx:id="suppBTN" layoutX="356.0" layoutY="734.0" mnemonicParsing="false" onAction="#delete_blog" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Supprimer" textFill="WHITE" />
+                  <Button fx:id="editBTN" layoutX="201.0" layoutY="734.0" mnemonicParsing="false" onAction="#modifier_blog" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #1ab394;" text="Modifier" textFill="WHITE" />
                   <Separator layoutX="544.0" layoutY="59.0" orientation="VERTICAL" prefHeight="689.0" prefWidth="6.0" />
                   <Separator layoutX="149.0" layoutY="48.0" prefHeight="25.0" prefWidth="925.0" />
                   <Separator layoutX="149.0" layoutY="14.0" prefHeight="3.0" prefWidth="925.0" />
@@ -83,32 +84,30 @@
                         <Font name="Arial Rounded MT Bold" size="22.0" />
                      </font>
                   </Label>
-                  <DatePicker layoutX="283.0" layoutY="451.0" />
-                  <ChoiceBox layoutX="295.0" layoutY="232.0" prefWidth="150.0" />
+                  <DatePicker fx:id="date_blog" layoutX="283.0" layoutY="379.0" />
+                  <ChoiceBox fx:id="cat_box" layoutX="295.0" layoutY="232.0" prefWidth="150.0" />
                   <Label layoutX="190.0" layoutY="236.0" text="categorie">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="173.0" layoutY="464.0" text="date:">
+                  <Label layoutX="195.0" layoutY="383.0" text="date:">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="imageVIEW" fitHeight="150.0" fitWidth="200.0" layoutX="723.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
          </center>
          <left>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutY="-1.0" prefHeight="841.0" prefWidth="199.0" style="-fx-background-color: #2f4050;">
+                  <AnchorPane layoutX="-3.0" layoutY="-1.0" prefHeight="841.0" prefWidth="218.0" style="-fx-background-color: #2f4050;">
                      <children>
-                        <VBox layoutY="138.0" prefHeight="250.0" prefWidth="203.0">
-                           <children>
-                              <Button fx:id="BtnBlog" mnemonicParsing="false" onAction="#BtnBlog" prefHeight="79.0" prefWidth="203.0" style="-fx-background-color: #1ab394;" text="Blog" textFill="WHITE" />
-                              <Button fx:id="Btncategorie" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Btncategorie" prefHeight="79.0" prefWidth="203.0" style="-fx-background-color: #1ab394;" text="Catégorie" textFill="WHITE" />
-                           </children>
-                        </VBox>
+                        <VBox layoutX="-21.0" layoutY="520.0" prefHeight="250.0" prefWidth="203.0" />
+                        <Button fx:id="BlogBTN" layoutX="2.0" layoutY="213.0" mnemonicParsing="false" onAction="#goToBlog" prefHeight="34.0" prefWidth="212.0" style="-fx-background-color: #1ab394;" text="Blog" textFill="#fffdfd" />
+                        <Button fx:id="reservationBTN" layoutX="2.0" layoutY="267.0" mnemonicParsing="false" onAction="#goToCategorie" prefHeight="34.0" prefWidth="213.0" style="-fx-background-color: #1ab394;" text="Categorie" textFill="WHITE" />
                      </children>
                   </AnchorPane>
                </children>

@@ -7,6 +7,7 @@ package edusexprojectv0;
 
 import edusex.entities.Product;
 import edusex.entities.Reservation;
+import edusex.entities.blog;
 import edusex.services.ServiceProduct;
 import edusex.services.ServiceReservation;
 import edusex.utils.MyDB;
@@ -26,8 +27,9 @@ public class EdusexProjectv0 {
         MyDB.getInstance();
         
         Product p = new Product(47,"test2","test2",22,"test2");
-        ServiceProduct sp = new ServiceProduct();
-        ServiceReservation sr = new ServiceReservation();
+       //log b = new blog(1,
+        //rviceProduct sp = new ServiceProduct();
+       //erviceReservation sr = new ServiceReservation();
         //sp.addProduct(p);
         //sp.removeProduct(p);
         //sp.updateProduct(p);
@@ -36,11 +38,11 @@ public class EdusexProjectv0 {
         
         
         
-        Date d = new Date(121, 2, 26, 10, 30, 0);
+       //ate d = new Date(121, 2, 26, 10, 30, 0);
 
        // Reservation r = new Reservation(2,2023-03-10,"en cours",10,22);
         //sr.addReservation(r);
-        System.out.println(sr.showReservation());
-    }
+       //ystem.out.println(sr.showReservation());
+                }
     
 }
