@@ -10,9 +10,11 @@ package entities;
  * @author Chebbi_Mariem
  */
 public class User {
+
     private Long id;
     private String nom;
     private String prenom;
+    private String tel;
 
     public User() {
     }
@@ -27,7 +29,14 @@ public class User {
         this.nom = nom;
         this.prenom = prenom;
     }
-    
+
+    public User(Long id, String nom, String prenom, String tel) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.tel = tel;
+    }
+
     public User(Long id) {
         this.id = id;
     }
@@ -56,12 +65,17 @@ public class User {
         this.prenom = prenom;
     }
 
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
     @Override
     public String toString() {
-        return prenom + " "+ nom;
+        return prenom + " " + nom;
     }
-    
-    
-    
-    
+
 }
