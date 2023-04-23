@@ -172,9 +172,5 @@ public class ServiceInscription  implements IntServiceInscription<Inscription>{
         return nom;
     }
 
-    @Override
-    public ArrayList<Inscription> showInscriptionUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

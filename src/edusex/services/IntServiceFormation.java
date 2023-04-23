@@ -21,4 +21,5 @@ public interface IntServiceFormation<F> {
     public void updateFormation(F f);
     public ArrayList<F> showFormation();
     public void exportToExcel(List<Formation> formations, String fileName)throws IOException;
+        public ArrayList<F> showInscriptionUser();
 }

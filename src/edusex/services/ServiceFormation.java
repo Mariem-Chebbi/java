@@ -6,6 +6,7 @@
 package edusex.services;
 
 import edusex.entities.Formation;
+import edusex.entities.Inscription;
 import edusex.utils.MyDB;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -32,6 +33,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class ServiceFormation implements IntServiceFormation<Formation>{
     Statement Ste;
+    Statement SteF;
     Connection con;
 
     public ServiceFormation() {
@@ -155,6 +157,53 @@ public class ServiceFormation implements IntServiceFormation<Formation>{
     workbook.close();
     outputStream.close();
   }
+    
+@Override
+    public ArrayList<Formation> showInscriptionUser() {
+          ArrayList<Inscription> inscriptionUser = new ArrayList<>();
+              Inscription i=null;
+            ArrayList<Formation> formationUser = new ArrayList<>();  
+        try {
+            Ste= con.createStatement();
+       
+        String req = "SELECT * FROM `edusex`.`Inscription`WHERE `Inscription`.`id_personnel_id`='"+2+"';";
+            ResultSet res= Ste.executeQuery(req);
+            while(res.next()){
+                int id = res.getInt(1);
+                int idPersonnel = res.getInt(2);
+                int idFormation = res.getInt(3);
+                int Present = res.getInt(4);
+                if (Present==1){                   
+                    i =new Inscription(id,  idPersonnel, idFormation, "Present");
+                }else{
+                 i =new Inscription(id,  idPersonnel, idFormation, "Absent");};
+                inscriptionUser.add(i);
+                
+              for (int j=0;j<inscriptionUser.size();j++){
+                  SteF= con.createStatement();
+                  String reqF = "SELECT * FROM `edusex`.`Formation`WHERE `Formation`.`id`='"+inscriptionUser.get(j).getIdFormation()+"';";
+                  ResultSet resF= SteF.executeQuery(reqF);
+                  while(res.next()){
+                    int idF = resF.getInt(1);
+                    //int certificationId = res.getInt(1);
+                    String libelle = resF.getString(2);
+                    String description = resF.getString(3);
+                    String image = resF.getString(5);
+                    Date dateFormation = resF.getDate(4);
+                Formation f =new Formation(idF, libelle, description,image, dateFormation);
+                formationUser.add(f);
+                }                            
+            }  
+            }
+         } catch (SQLException ex) {
+             System.out.println("err"+ex.getMessage());
+        }
+        return formationUser;
+    }
+        
+    
+    
+    
     
     }
     

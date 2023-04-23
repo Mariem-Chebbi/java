@@ -56,7 +56,7 @@ public class AfficherFormationInscritController implements Initializable {
             int column = 0;
             for (int i = 0; i < evenements.size(); i++) {
                 //chargement dynamique d'une interface
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Formation.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MesInscription.fxml"));
                 AnchorPane pane = loader.load();
                
                 //passage de parametres

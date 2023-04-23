@@ -16,5 +16,5 @@ public interface IntServiceInscription<I>  {
     public void removeInscription(I i);
     public void updateInscription(I i);
     public ArrayList<I> showInscription();
-    public ArrayList<I> showInscriptionUser();
+
 }
