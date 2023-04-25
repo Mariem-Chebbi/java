@@ -13,9 +13,12 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -77,7 +80,13 @@ public class AfficherCertificationController implements Initializable {
             pagination.setPageFactory(new Callback<Integer, Node>(){
                 @Override
                 public Node call(Integer i){
-                    return createPage(i);}
+                    try {
+                        return createPage(i);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(AfficherCertificationController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    return null;
+}
             });
             //  controller.setIdevent(evenements.get(i).getId_event());
               
@@ -89,15 +98,16 @@ public class AfficherCertificationController implements Initializable {
 //                }
         }
     }    
-    public VBox createPage(int index) {
- 
+    public VBox createPage(int index) throws SQLException {
+         ServiceCertification sc = new ServiceCertification();
         ImageView imageView = new ImageView();
  
         Certification c = evenements.get(index);
+        Certification certif=sc.showCertification(2, c.getFormationId());
        
             
             
-            String path = "D:\\\\EdusexProjectSymfonyFinal\\\\public\\\\images\\\\"+c.getImage();
+            String path = "D:\\\\EdusexProjectSymfonyFinal\\\\public\\\\images\\\\"+certif.getImage();
                File file=new File(path);
               Image image = new Image(file.toURI().toString());
                 img.setImage(image);

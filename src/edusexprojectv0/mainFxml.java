@@ -21,7 +21,7 @@ public class mainFxml extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../edusex/gui/AfficherFormation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../edusex/gui/AddFormation.fxml"));
             Parent root = loader.load();
             Scene sc = new Scene(root);
             primaryStage.setTitle("Personnes");

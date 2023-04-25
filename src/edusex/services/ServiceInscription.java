@@ -18,6 +18,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import javafx.scene.control.Alert;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -76,18 +77,26 @@ public class ServiceInscription  implements IntServiceInscription<Inscription>{
         String req="";
          try {
             Ste= con.createStatement();
-       
-        
+
         if (i.getPresent()=="Present"){
-        req = "UPDATE `edusex`.`Inscription`SET`present`='"+"1"+"' WHERE `Inscription`.`id`='"+i.getId()+"';";
-
+        int option = JOptionPane.showConfirmDialog(null, "est-il vraiment présent ?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) { 
+            req = "UPDATE `edusex`.`Inscription`SET`present`='"+"1"+"' WHERE `Inscription`.`id`='"+i.getId()+"';";
+            System.out.println("Action confirmée !");
+        } else {
+            System.out.println("Action annulée !");
+        }
         }else{
-        req = "UPDATE `edusex`.`Inscription`SET`present`='"+"0"+"' WHERE `Inscription`.`id`='"+i.getId()+"';";
-        };
-
-
-            Ste.executeUpdate(req);
             
+        int option = JOptionPane.showConfirmDialog(null, "est-il vraiment absent ?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) { 
+        req = "UPDATE `edusex`.`Inscription`SET`present`='"+"0"+"' WHERE `Inscription`.`id`='"+i.getId()+"';";
+        System.out.println("Action confirmée !");
+        } else {
+            System.out.println("Action annulée !");
+        }
+        };
+            Ste.executeUpdate(req);            
         }catch (SQLException ex) {
              System.out.println("err"+ex.getMessage());
         }
@@ -111,9 +120,8 @@ public class ServiceInscription  implements IntServiceInscription<Inscription>{
                     
                     i =new Inscription(id,  idPersonnel, idFormation, "Present");
                 }else{
-                 i =new Inscription(id,  idPersonnel, idFormation, "Absent");};
-                
-                pers.add(i);
+                 i =new Inscription(id,  idPersonnel, idFormation, "Absent");};               
+                 pers.add(i);
             }
             
             

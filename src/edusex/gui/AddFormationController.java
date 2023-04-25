@@ -251,7 +251,7 @@ public class AddFormationController implements Initializable {
     dateCol.setCellValueFactory(new PropertyValueFactory<>("dateFormatiob"));
     dateCol.setCellFactory(column->{
         return new TableCell<Formation,Date>(){
-                @Override
+    @Override
     protected void updateItem(Date item,boolean empty){
     super.updateItem(item, empty);
     if(empty){

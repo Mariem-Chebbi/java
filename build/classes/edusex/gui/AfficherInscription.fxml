@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AfficherInscriptionController">
+   <items>
+      <AnchorPane prefHeight="715.0" prefWidth="1075.0" style="-fx-background-color: #f3f3f4;">
+         <children>
+            <AnchorPane prefHeight="746.0" prefWidth="149.0" style="-fx-background-color: #2f4050;">
+               <children>
+                  <Button fx:id="certification" layoutX="-1.0" layoutY="205.0" mnemonicParsing="false" onAction="#addCertification" prefHeight="26.0" prefWidth="150.0" text="Certifications" textFill="WHITE" style="-fx-background-color: #1ab394;"/>
+                  <Button fx:id="formation" layoutX="-1.0" layoutY="245.0" mnemonicParsing="false" onAction="#addFormation" prefHeight="26.0" prefWidth="150.0" text="Formations" textFill="WHITE" style="-fx-background-color: #1ab394;" />
+                  <Button fx:id="inscription" layoutX="-1.0" layoutY="283.0" mnemonicParsing="false" onAction="#afficherInscription" prefHeight="26.0" prefWidth="150.0" text="Inscriptions" textFill="WHITE" style="-fx-background-color: #1ab394;"/>
+               </children></AnchorPane>
+            <TableView fx:id="tab" layoutX="179.0" layoutY="74.0" onMouseClicked="#modifierPresence" prefHeight="427.0" prefWidth="514.0">
+               <columns>
+                  <TableColumn fx:id="idCOL" prefWidth="36.0" text="ID" />
+                  <TableColumn fx:id="personnelCOL" prefWidth="179.0" text="Personnel" />
+                  <TableColumn fx:id="formationCOL" prefWidth="164.800048828125" text="Formation" />
+                  <TableColumn fx:id="presentCOL" prefWidth="133.5999755859375" text="Présent" />
+               </columns>
+            </TableView>
+            <Separator layoutX="149.0" layoutY="48.0" prefHeight="25.0" prefWidth="925.0" />
+            <Separator layoutX="149.0" layoutY="14.0" prefHeight="3.0" prefWidth="925.0" />
+            <Label layoutX="179.0" layoutY="22.0" prefHeight="27.0" prefWidth="248.0" text="Listes des Inscriptions">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="713.0" layoutY="584.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

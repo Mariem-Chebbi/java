@@ -7,10 +7,12 @@ package edusex.gui;
 
 import edusex.entities.Certification;
 import edusex.entities.Formation;
+import edusex.services.ServiceCertification;
 import edusex.services.ServiceFormation;
 import edusex.services.ServiceInscription;
 import java.io.File;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
@@ -40,9 +42,10 @@ public class CertificationController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }  
-    public void setCertification(Certification c) {
+    public void setCertification(Certification c) throws SQLException {
         
        ServiceFormation serviceFormation = new ServiceFormation();
+       ServiceCertification sc = new ServiceCertification();
        
         List<Formation>  formations = serviceFormation.showFormation();
          for (int i = 0; i < formations.size(); i++) {
@@ -50,11 +53,14 @@ public class CertificationController implements Initializable {
              nomFormationLabel.setText(formations.get(i).getLibelle());    
                 } 
             }
-     
-         String path = "D:\\\\EdusexProjectSymfonyFinal\\\\public\\\\images\\\\"+c.getImage();
+     Certification certif=sc.showCertification(2, c.getFormationId());
+     {
+         String path = "D:\\\\EdusexProjectSymfonyFinal\\\\public\\\\images\\\\"+certif.getImage();
                File file=new File(path);
               Image image = new Image(file.toURI().toString());
                 img.setImage(image);
+     }
+         
     }
     
 }

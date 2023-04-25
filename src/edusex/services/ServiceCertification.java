@@ -190,4 +190,42 @@ Statement SteC;
         return pers; //To change body of generated methods, choose Tools | Templates.
     }
     
+    public boolean isPresent(int userId,int formationId) throws SQLException
+    {
+        Ste= con.createStatement();            
+            String req = "SELECT * FROM `edusex`.`Inscription` "
+                + "WHERE `Inscription`.`id_personnel_id`='"+2+"' "
+                + "AND `Inscription`.`present`='"+1+"' "
+                + "AND `Inscription`.`id_formation_id`='"+formationId+"' ; ";
+            ResultSet res= Ste.executeQuery(req);
+           return(res.next());
+    }
+    
+    public Certification showCertification(int userId, int idFormation) throws SQLException
+    {
+        Certification c = new Certification();
+        try {
+        if(isPresent(userId,idFormation))
+        {
+            SteC= con.createStatement();            
+            String req2 = "SELECT * FROM `edusex`.`Certification`"
+                + "WHERE `Certification`.`id_formation_id`='"+idFormation+"' ; ";
+            ResultSet res2= SteC.executeQuery(req2); 
+            while(res2.next()){              
+                int id = res2.getInt(1);
+                int formationId = res2.getInt(2);
+                String image = res2.getString(3);                
+                c =new Certification(formationId,  id, image);
+                
+            }
+            
+        }
+        }
+        catch (SQLException ex) {
+             System.out.println("err"+ex.getMessage());
+        }
+        //System.out.println(pers);
+        return c;
+    }
+    
 }

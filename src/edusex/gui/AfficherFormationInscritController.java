@@ -51,7 +51,8 @@ public class AfficherFormationInscritController implements Initializable {
             List<String> choix = Arrays.asList("Formations", "Inscriptions");
             formation.getItems().addAll(choix);        
             try {
-            List<Formation> evenements = ev.showFormation();
+            List<Formation> evenements = ev.showInscriptionUser(2);
+               // System.out.println(ev.showInscriptionUser(2));
             int row = 0;
             int column = 0;
             for (int i = 0; i < evenements.size(); i++) {
@@ -60,7 +61,7 @@ public class AfficherFormationInscritController implements Initializable {
                 AnchorPane pane = loader.load();
                
                 //passage de parametres
-                FormationController controller = loader.getController();
+                MesInscriptionController controller = loader.getController();
                 controller.setFormation(evenements.get(i));
               //  controller.setIdevent(evenements.get(i).getId_event());
                 

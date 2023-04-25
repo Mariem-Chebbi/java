@@ -15,12 +15,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import edusex.entities.Formation;
 import edusex.entities.Inscription;
+import edusex.services.ServiceCertification;
+import edusex.services.ServiceFormation;
 import edusex.services.ServiceInscription;
 import java.io.File;
 import java.sql.Date;
+import java.sql.SQLException;
+import java.util.List;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 
 /**
  * FXML Controller class
@@ -53,7 +59,7 @@ public class FormationController implements Initializable {
     }    
 
     
-      public void setFormation(Formation e) {
+      public void setFormation(Formation e) throws SQLException {
         
         nomProduirLabel.setText(e.getLibelle());
         //QunatiteLabel.setText(String.valueOf(e.getQteStock()));
@@ -65,13 +71,17 @@ public class FormationController implements Initializable {
                File file=new File(path);
               Image img = new Image(file.toURI().toString());
                 imageview.setImage(img);
-       
-
+               // System.out.println(e.getId());
+                ServiceCertification sc = new ServiceCertification();
+         // System.out.println(sc.showCertification(2, e.getId()));
     }
 
+    
+      
     @FXML
     private void handleInscription(MouseEvent event) {
          ServiceInscription serviceInscription = new ServiceInscription();
+         
               
 //    Inscription inscriptionfind = serviceInscription.showInscription().stream()
 //                .filter(i -> i.getIdPersonnel() == 2 && i.getIdFormation() == Integer.parseInt(idFormation.getText()))

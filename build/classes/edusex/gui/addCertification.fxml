@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AddCertificationController">
+   <items>
+      <AnchorPane prefHeight="715.0" prefWidth="1075.0" style="-fx-background-color: #f3f3f4;">
+         <children>
+            <AnchorPane prefHeight="746.0" prefWidth="99.0" style="-fx-background-color: #2f4050;">
+               <children>
+                  <Button fx:id="certification" layoutY="225.0" mnemonicParsing="false" onAction="#addCertification" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1ab394;" text="Certifications" textFill="WHITE" />
+                  <Button fx:id="formation" layoutY="263.0" mnemonicParsing="false" onAction="#addFormation" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1ab394;" text="Formations" textFill="#fafafa" />
+                  <Button fx:id="inscription" layoutY="300.0" mnemonicParsing="false" onAction="#afficherInscription" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #1ab394;" text="Inscriptions" textFill="#fafafa" />
+               </children></AnchorPane>
+            <Label layoutX="197.0" layoutY="203.0" prefHeight="27.0" prefWidth="76.0" text="Formation : ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="206.0" layoutY="117.0" text="Ajouter une Certification">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="backBTN" layoutX="943.0" layoutY="19.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #9b9d9e;" text="Retour" textFill="WHITE" />
+            <TableView fx:id="tab" layoutX="584.0" layoutY="162.0" onMouseClicked="#choisirCertification" prefHeight="417.0" prefWidth="477.0">
+               <columns>
+                  <TableColumn fx:id="idCOL" prefWidth="36.0" text="ID" />
+                  <TableColumn fx:id="formationCOL" prefWidth="179.0" text="Formation" />
+                  <TableColumn fx:id="imageCOL" prefWidth="261.0" text="Image" />
+               </columns>
+            </TableView>
+            <Separator layoutX="544.0" layoutY="59.0" orientation="VERTICAL" prefHeight="689.0" prefWidth="6.0" />
+            <Separator layoutX="149.0" layoutY="48.0" prefHeight="25.0" prefWidth="925.0" />
+            <Separator layoutX="149.0" layoutY="14.0" prefHeight="3.0" prefWidth="925.0" />
+            <Label layoutX="584.0" layoutY="117.0" text="Liste des Certification">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="179.0" layoutY="22.0" text="Les Certifications">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="CertificationDBX" layoutX="289.0" layoutY="204.0" prefHeight="25.0" prefWidth="219.0" />
+            <Button fx:id="submitBTN" layoutX="215.0" layoutY="478.0" mnemonicParsing="false" onAction="#ajouterCertification" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Enregistrer" textFill="WHITE" />
+            <Button fx:id="cancelBTN" layoutX="215.0" layoutY="531.0" mnemonicParsing="false" onAction="#reset" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #288ff7;" text="Annuler" textFill="WHITE" />
+            <Button layoutX="379.0" layoutY="578.0" mnemonicParsing="false" onAction="#supCertification" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #fc5947;" text="Supprimer" textFill="WHITE" />
+            <Button layoutX="216.0" layoutY="578.0" mnemonicParsing="false" onAction="#modifierCertification" prefHeight="34.0" prefWidth="127.0" style="-fx-background-color: #faac3e;" text="Modifier" textFill="WHITE" />
+            <Label layoutX="206.0" layoutY="248.0" prefHeight="25.0" prefWidth="56.0" text="Image : ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="imageBTN" layoutX="287.0" layoutY="248.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="34.0" prefWidth="200.0" style="-fx-background-color: #decadd;" text="Choisire une image" textFill="WHITE" />
+            <TextField fx:id="imageTF" layoutX="83.0" layoutY="193.0" visible="false" />
+            <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="713.0" layoutY="584.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

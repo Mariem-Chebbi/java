@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="222.0" prefWidth="554.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AfficherCertificationController">
+   <children>
+      <ScrollPane hmax="11.0" hmin="5.0" hvalue="1.0" layoutY="-4.0" prefHeight="708.0" prefWidth="1022.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);">
+         <content>
+            <AnchorPane prefHeight="687.0" prefWidth="1022.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);">
+               <children>
+                  <Label layoutX="369.0" layoutY="115.0" prefHeight="46.0" prefWidth="303.0" text="Mes certifications" textAlignment="CENTER" textFill="#dc8cdb">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Pagination fx:id="pagination" layoutX="91.0" layoutY="198.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="374.0" prefWidth="840.0" />
+                  <ImageView fx:id="img" fitHeight="280.0" fitWidth="457.0" layoutX="283.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true" />
+                  <AnchorPane layoutX="-2.0" prefHeight="58.0" prefWidth="1022.0" style="-fx-background-color: #e3d1e2;">
+                     <children>
+                        <Button fx:id="certification" layoutX="573.0" layoutY="22.0" mnemonicParsing="false" onAction="#afficherCertification" style="-fx-background-color: #e3d1e2;" text="Certifications" />
+                        <ComboBox fx:id="formation" layoutX="692.0" layoutY="22.0" onAction="#afficherFormation" prefWidth="150.0" promptText="Formations" style="-fx-background-color: #e3d1e2;" />
+                        <ImageView fitHeight="45.0" fitWidth="67.0" layoutX="40.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logo.png" />
+                           </image>
+                        </ImageView>                       
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

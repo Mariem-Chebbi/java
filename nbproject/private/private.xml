@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AddCertificationController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AddFormationController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/bg1.png</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusexprojectv0/EdusexProjectv0.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/ServiceReservation.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/IntServiceProduct.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/IntServiceCertification.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/MesInscriptionController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/IntServiceFormation.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/entities/Reservation.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/FormationMain.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/ServiceInscription.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/addFormation.fxml</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/ServiceProduct.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/entities/Inscription.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AfficherCertification.fxml</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/ServiceFormation.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/ServiceCertification.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusexprojectv0/mainFxml.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AfficherCertificationController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/FormationController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AfficherFormationController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AfficherFormation.fxml</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/IntServiceInscription.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AfficherInscriptionController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/FacebookShare.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AfficherFormationInscritController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/addCertification.fxml</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/Formation.fxml</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/CertificationController.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/services/IntServiceReservation.java</file>
+            <file>file:/D:/desktop_15_04_2023/src/edusex/gui/AfficherInscription.fxml</file>
+        </group>
+    </open-files>
+</project-private>
