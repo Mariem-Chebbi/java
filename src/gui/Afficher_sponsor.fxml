@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Afficher_sponsorController">
+   <children>
+      <ImageView fitHeight="531.0" fitWidth="896.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/back.jpg" />
+         </image>
+         <effect>
+            <SepiaTone />
+         </effect>
+      </ImageView>
+      <Text layoutX="607.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button layoutX="25.0" layoutY="13.0" mnemonicParsing="false" onAction="#gomodif" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0000FF;" stylesheets="@list.css" text="Modification sponsor">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font></Button>
+      <Button layoutX="184.0" layoutY="13.0" mnemonicParsing="false" onAction="#goajout" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0000FF;" stylesheets="@list.css" text="Ajout sponsor">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Button layoutX="504.0" layoutY="478.0" mnemonicParsing="false" onAction="#actualiser" prefHeight="39.0" prefWidth="118.0" stylesheets="@list.css" text="Actualiser" />
+      <ScrollPane layoutX="53.0" layoutY="149.0" prefHeight="306.0" prefWidth="753.0">
+         <content>
+            <VBox fx:id="vb" prefHeight="290.0" prefWidth="746.0">
+               <effect>
+                  <Lighting bumpInput="$null">
+                     <light>
+                       
+                     </light>
+                  </Lighting>
+               </effect></VBox>
+         </content>
+      </ScrollPane>
+      <Label fx:id="nom_sponsorr" layoutX="106.0" layoutY="116.0" stylesheets="@list.css" text="nom_sponsor" />
+      <Label fx:id="typee" layoutX="229.0" layoutY="116.0" stylesheets="@list.css" text="Type" />
+      <Label fx:id="ideventt" layoutX="376.0" layoutY="116.0" stylesheets="@list.css" text="id_event" />
+      <Label layoutX="638.0" layoutY="116.0" stylesheets="@list.css" />
+      <Label layoutX="281.0" layoutY="67.0" prefHeight="34.0" prefWidth="283.0" text="Liste des Sponsors" textFill="#090a0a">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="540.0" layoutY="116.0" stylesheets="@list.css" />
+      <Button fx:id="button" layoutX="644.0" layoutY="478.0" mnemonicParsing="false" onAction="#trier" prefHeight="39.0" prefWidth="118.0" stylesheets="@list.css" text="Trier " />
+      <Button layoutX="607.0" layoutY="13.0" mnemonicParsing="false" onAction="#event" prefHeight="45.0" prefWidth="151.0" style="-fx-background-color: #0000FF;" stylesheets="@list.css" text="Evenements">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
