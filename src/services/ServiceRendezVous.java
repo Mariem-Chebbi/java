@@ -5,6 +5,7 @@
  */
 package services;
 
+import com.twilio.rest.reader.api.v2010.account.usage.record.ThisMonthReader;
 import entities.CreneauHoraire;
 import entities.RendezVous;
 import entities.User;
@@ -17,11 +18,14 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.quartz.SchedulerException;
 import utils.EmailSender;
 import utils.MyDB;
+import utils.RappelRendezVous;
 
 /**
  *
@@ -31,9 +35,11 @@ public class ServiceRendezVous implements IService<RendezVous> {
 
     Connection maCon;
     Statement ste;
+    User us;
 
     public ServiceRendezVous() {
         maCon = MyDB.getInstance().getcon();
+        us = new User(2l);
     }
 
     @Override
@@ -74,7 +80,7 @@ public class ServiceRendezVous implements IService<RendezVous> {
     @Override
     public List<RendezVous> afficher(Long id) {
         ArrayList<RendezVous> list = new ArrayList<>();
-        String requete = "SELECT * FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` > ? ORDER BY `date_rdv` ASC;";
+        String requete = "SELECT * FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` > ? ORDER BY `date_rdv` , `heure` ASC;";
         try {
             PreparedStatement ps = maCon.prepareStatement(requete);
             ps.setLong(1, id);
@@ -103,7 +109,130 @@ public class ServiceRendezVous implements IService<RendezVous> {
 
     public List<RendezVous> historique(Long id) {
         ArrayList<RendezVous> list = new ArrayList<>();
-        String requete = "SELECT * FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` < ? ORDER BY `date_rdv` DESC;";
+        String requete = "SELECT `id`,`date_rdv`,`personnel_id`,`heure`,`client_id` FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` < ? ORDER BY `date_rdv`, `heure` DESC;";
+        try {
+            PreparedStatement ps = maCon.prepareStatement(requete);
+            ps.setLong(1, id);
+            ps.setDate(2, Date.valueOf(LocalDate.now()));
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Long id_ = rs.getLong(1);
+                Date date_rdv = rs.getDate(2);
+                LocalDate localDate = date_rdv.toLocalDate();
+                Long psy_id = rs.getLong(3);
+                int heure = rs.getInt(4);
+                Long client_id = rs.getLong(5);
+
+                ServiceUser u = new ServiceUser();
+                User psy = u.getUserById(psy_id);
+                User client = new User(client_id);
+ 
+                RendezVous rdv = new RendezVous(id_, localDate, heure, psy, client);
+                list.add(rdv);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceCreneauHoraire.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+
+    @Override
+    public void modifier(RendezVous o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void rappeler() throws SchedulerException {
+        LocalDate rDate = null;
+        for (RendezVous rdv : afficher(us.getId())) {
+            LocalDate date = rdv.getDate_rdv();
+            LocalDate tomorrow = LocalDate.now().plusDays(1);
+            if (date.isEqual(tomorrow)) {
+                System.out.println("The date is equal to tomorrow");
+                rDate = date;
+            } else {
+                System.out.println("The date is not equal to tomorrow");
+            }
+        }
+        if (rDate != null) {
+            RappelRendezVous.reminder(getReminderDate(rDate));
+        }
+    }
+
+    public static java.util.Date getReminderDate(LocalDate date) {
+        // set the time for the reminder to one day before the appointment
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli());
+        cal.add(Calendar.DATE, -1);
+        cal.set(Calendar.HOUR_OF_DAY, Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+        cal.set(Calendar.MINUTE, Calendar.getInstance().get(Calendar.MINUTE) + 1);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+
+        //System.out.println(cal.getTime());
+        return cal.getTime();
+    }
+    
+    public List<RendezVous> triASC (Long id) {
+        ArrayList<RendezVous> list = new ArrayList<>();
+        String requete = "SELECT * FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` > ? ORDER BY `date_rdv`, `heure` ASC;";
+        try {
+            PreparedStatement ps = maCon.prepareStatement(requete);
+            ps.setLong(1, id);
+            ps.setDate(2, Date.valueOf(LocalDate.now()));
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Long id_ = rs.getLong(1);
+                Date date_rdv = rs.getDate(2);
+                LocalDate localDate = date_rdv.toLocalDate();
+                Long psy_id = rs.getLong(3);
+                int heure = rs.getInt(4);
+                Long client_id = rs.getLong(5);
+
+                ServiceUser u = new ServiceUser();
+                User psy = u.getUserById(psy_id);
+                User client = new User(client_id);
+
+                RendezVous rdv = new RendezVous(id_, localDate, heure, psy, client);
+                list.add(rdv);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceCreneauHoraire.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    
+    public List<RendezVous> triDESC (Long id) {
+        ArrayList<RendezVous> list = new ArrayList<>();
+        String requete = "SELECT * FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` > ? ORDER BY `date_rdv`, `heure` DESC;";
+        try {
+            PreparedStatement ps = maCon.prepareStatement(requete);
+            ps.setLong(1, id);
+            ps.setDate(2, Date.valueOf(LocalDate.now()));
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Long id_ = rs.getLong(1);
+                Date date_rdv = rs.getDate(2);
+                LocalDate localDate = date_rdv.toLocalDate();
+                Long psy_id = rs.getLong(3);
+                int heure = rs.getInt(4);
+                Long client_id = rs.getLong(5);
+
+                ServiceUser u = new ServiceUser();
+                User psy = u.getUserById(psy_id);
+                User client = new User(client_id);
+
+                RendezVous rdv = new RendezVous(id_, localDate, heure, psy, client);
+                list.add(rdv);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceCreneauHoraire.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    
+    public List<RendezVous> historiqueASC(Long id) {
+        ArrayList<RendezVous> list = new ArrayList<>();
+        String requete = "SELECT * FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` < ? ORDER BY `date_rdv`  ASC;";
         try {
             PreparedStatement ps = maCon.prepareStatement(requete);
             ps.setLong(1, id);
@@ -129,10 +258,34 @@ public class ServiceRendezVous implements IService<RendezVous> {
         }
         return list;
     }
+    
+    public List<RendezVous> historiqueDESC(Long id) {
+        ArrayList<RendezVous> list = new ArrayList<>();
+        String requete = "SELECT * FROM `rendez_vous` WHERE `client_id` = ? and `date_rdv` < ? ORDER BY `date_rdv` DESC;";
+        try {
+            PreparedStatement ps = maCon.prepareStatement(requete);
+            ps.setLong(1, id);
+            ps.setDate(2, Date.valueOf(LocalDate.now()));
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Long id_ = rs.getLong(1);
+                Date date_rdv = rs.getDate(2);
+                LocalDate localDate = date_rdv.toLocalDate();
+                Long psy_id = rs.getLong(3);
+                int heure = rs.getInt(4);
+                Long client_id = rs.getLong(5);
 
-    @Override
-    public void modifier(RendezVous o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                ServiceUser u = new ServiceUser();
+                User psy = u.getUserById(psy_id);
+                User client = new User(client_id);
+
+                RendezVous rdv = new RendezVous(id, localDate, heure, psy, client);
+                list.add(rdv);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceCreneauHoraire.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
 
 }

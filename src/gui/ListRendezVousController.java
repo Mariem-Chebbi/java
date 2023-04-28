@@ -22,6 +22,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Pagination;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -63,9 +64,13 @@ public class ListRendezVousController implements Initializable {
     @FXML
     private TextField tfSearch;
 
+    @FXML
+    private Pagination pagination;
+
     public void lister() {
         User user = new User(2L);
         tv.getItems().clear();
+        observableList.clear();
         ServiceRendezVous service = new ServiceRendezVous();
         List<RendezVous> list = service.afficher(user.getId());
         observableList.addAll(list);
@@ -124,6 +129,16 @@ public class ListRendezVousController implements Initializable {
         appStage.show();
     }
 
+    @FXML
+    private void goToStatistique(ActionEvent event) throws IOException {
+        Parent settingsParent = FXMLLoader.load(getClass().getResource("Statistique.fxml"));
+        Scene settingsScene = new Scene(settingsParent);
+        Stage appStage = (Stage) root.getScene().getWindow();
+        appStage.setScene(settingsScene);
+        System.out.println("succes");
+        appStage.show();
+    }
+
     private RendezVous getSelectedItem() {
         return this.tv.getSelectionModel().getSelectedItem();
     }
@@ -134,18 +149,15 @@ public class ListRendezVousController implements Initializable {
         ServiceRendezVous service = new ServiceRendezVous();
         System.out.println(getSelectedItem());
         service.supprimer(getSelectedItem());
-        msg = "Bonjour,\n" 
+        msg = "Bonjour,\n"
                 + "Nous sommes désolés de vous informer que nous avons dû annuler notre rendez-vous prévu pour le " + getSelectedItem().getDate_rdv();
-        //SMSSender.sendSMS(msg, "20744656");
+        SMSSender.sendSMS(msg, "20744656");
         WhatsAppSender.sendWhatsApp("Nous sommes désolés de vous informer que nous avons dû annuler notre rendez-vous prévu pour le " + getSelectedItem().getDate_rdv());
         lister();
     }
 
     @FXML
     private void recherche_avance(KeyEvent event) {
-        System.out.println("*******************");
-
-        //System.out.println(id.departement);
         FilteredList<RendezVous> filtereddata = new FilteredList<>(observableList, b -> true);
         System.out.println(tfSearch.getText());
         tfSearch.textProperty().addListener((observable, oldvalue, newValue) -> {
@@ -175,6 +187,28 @@ public class ListRendezVousController implements Initializable {
         tv.setItems(filtereddata);
     }
 
+    @FXML
+    public void triAsc(ActionEvent event) {
+        ObservableList<RendezVous> listASC = FXCollections.observableArrayList();
+        User user = new User(2L);
+        //tv.getItems().clear();
+        ServiceRendezVous service = new ServiceRendezVous();
+        List<RendezVous> list = service.triASC(user.getId());
+        listASC.addAll(list);
+        tv.setItems(listASC);
+    }
+    
+    @FXML
+    public void triDesc(ActionEvent event) {
+        ObservableList<RendezVous> listASC = FXCollections.observableArrayList();;
+        User user = new User(2L);
+        //tv.getItems().clear();
+        ServiceRendezVous service = new ServiceRendezVous();
+        List<RendezVous> list = service.triDESC(user.getId());
+        listASC.addAll(list);
+        tv.setItems(listASC);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -184,6 +218,15 @@ public class ListRendezVousController implements Initializable {
         colDate.setCellValueFactory(new PropertyValueFactory<>("date_rdv"));
         ColHeure.setCellValueFactory(new PropertyValueFactory<>("heure"));
         lister();
+
+        int itemsPerPage = 5;
+        pagination.setPageCount((int) Math.ceil((double) observableList.size() / itemsPerPage));
+        pagination.setPageFactory(pageIndex -> {
+            int fromIndex = pageIndex * itemsPerPage;
+            int toIndex = Math.min(fromIndex + itemsPerPage, observableList.size());
+            tv.setItems(FXCollections.observableArrayList(observableList.subList(fromIndex, toIndex)));
+            return tv;
+        });
     }
 
 }

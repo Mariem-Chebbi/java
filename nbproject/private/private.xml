@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/ListCreneauHoraireController.java</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/utils/MyDB.java</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/services/ServiceRendezVous.java</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/StatistiqueController.java</file>
             <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/edusex/EduSex.java</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/utils/WhatsAppSender.java</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/HistoriqueRendezVousController.java</file>
             <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/ListRendezVousController.java</file>
-            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/test/testRappelRDV.java</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/HistoriqueRendezVous.fxml</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/services/ServiceCreneauHoraire.java</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/gui/ListRendezVous.fxml</file>
+            <file>file:/C:/Users/omeganet/OneDrive/Documents/NetBeansProjects/eduSex/src/utils/RappelRendezVous.java</file>
         </group>
     </open-files>
 </project-private>

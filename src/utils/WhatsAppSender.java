@@ -22,11 +22,13 @@ public class WhatsAppSender {
             URI uri = new URI("https://graph.facebook.com/v13.0/112984521774770/messages");
             HttpURLConnection connection = (HttpURLConnection) uri.toURL().openConnection();
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Authorization", "Bearer EAAIYzeadInkBAMHo6Xctd23NTPlatJd331v4a5ZCf7XO1x1FaZBhziZAcEOYygkwJy5DpGdNqdyIZCZBRkRVf4CunDaYh8yFpdgFS9mdms9UEJZA8v6F2gvpGoWrkwgHizxIOx9IaLUayn9E8yu8rSZCQiaxv4nwEiohbo0Ayo5qFByBZCABQorMrvNnw75mFQFLeGZBonNbb2FRTbJzCQxxyhMdugw6IvNsZD");
+            connection.setRequestProperty("Authorization", "Bearer EAAIYzeadInkBAN1CD8YVEMUXSO1fvvuDeMZBmGLMMhDg9ZC1101lUbalIuHIT7yWgiaV9PxyMLbAlT1pdCGHel6WCOoo37gL36PW5Dcn1ACjEczy0GK7W9hcQqDEObsMLIa2O43t7ZAWTCXQmahdNoZC6mHtbZBzkr1tBeYA37luwjN4QTBWwgVE6jlsL4AKZB6mD1R7mEU5NXYTlwz1t2W2Xa6EcjTfkZD");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setDoOutput(true);
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
-            String body = "{ \"messaging_product\": \"whatsapp\", \"recipient_type\": \"individual\", \"to\": \"21620744656\", \"type\": \"text\", \"text\": { \"preview_url\": false, \"body\": \"" + msg + "\" } }";
+            //String body = "{ \"messaging_product\": \"whatsapp\", \"recipient_type\": \"individual\", \"to\": \"21620744656\", \"type\": \"text\", \"text\": { \"preview_url\": false, \"body\": \"" + msg + "\" } }";
+            String body = "{ \"messaging_product\": \"whatsapp\", \"to\": \"21620744656\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }";
+
             writer.write(body);
             writer.flush();
             writer.close();

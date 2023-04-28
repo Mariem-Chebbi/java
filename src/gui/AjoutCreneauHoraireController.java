@@ -127,6 +127,16 @@ public class AjoutCreneauHoraireController implements Initializable {
         System.out.println("succes");
         appStage.show();
     }
+    
+    @FXML
+    private void goToStatistique(ActionEvent event) throws IOException {
+        Parent settingsParent = FXMLLoader.load(getClass().getResource("Statistique.fxml"));
+        Scene settingsScene = new Scene(settingsParent);
+        Stage appStage = (Stage) root.getScene().getWindow();
+        appStage.setScene(settingsScene);
+        System.out.println("succes");
+        appStage.show();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

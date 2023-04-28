@@ -16,6 +16,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.quartz.SchedulerException;
+import services.ServiceRendezVous;
 
 /**
  *
@@ -36,8 +38,11 @@ public class EduSex extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SchedulerException {
+        ServiceRendezVous serviceRendezVous = new ServiceRendezVous();
+        serviceRendezVous.rappeler();
         launch(args);
+       
     }
     
 }

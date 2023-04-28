@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="770.0" prefWidth="1269.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.StatistiqueController">
+    <stylesheets>
+        <URL value="@statistique.css" />
+    </stylesheets>
+    <children>
+        <MenuBar prefHeight="45.0" prefWidth="1269.0" styleClass="menuClass" AnchorPane.bottomAnchor="725.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Créneau Horaire">
+                    <items>
+                        <MenuItem fx:id="miList" mnemonicParsing="false" onAction="#goToList" text="List" />
+                        <MenuItem fx:id="goToAjout" mnemonicParsing="false" onAction="#goToAjout" text="Ajout" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Rendez-vous">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToListRDV" text="List" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToHistorique" text="Historique" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToAjoutRDV" text="Prendre rendez-vous" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToStatistique" text="Statistique" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ImageView fitHeight="625.0" fitWidth="1265.0" layoutX="2.0" layoutY="227.0" opacity="0.51" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.6312255859375" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="227.0">
+            <image>
+                <Image url="@images/footer-bg.png" />
+            </image>
+        </ImageView>
+      <ImageView fitHeight="187.0" fitWidth="95.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="507.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="76.0">
+         <image>
+            <Image url="@images/banner-left-dec.png" />
+         </image>
+      </ImageView>
+        <BarChart fx:id="barChart" layoutX="160.0" layoutY="193.0" prefHeight="492.0" prefWidth="950.0" styleClass="barChart" title="Nombre de rendez-vous chaque 3 mois" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="193.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+        </BarChart>
+        <Label layoutX="548.0" layoutY="100.0" text="Statistiques">
+            <font>
+                <Font name="Segoe UI Black" size="30.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="210.0" fitWidth="167.0" layoutX="1100.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/323804567_721260959623274_1245068995679338409_n%20(3).png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

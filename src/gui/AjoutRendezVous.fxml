@@ -8,6 +8,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,48 +17,67 @@
     <stylesheets>
         <URL value="@ajoutrendezvous.css" />
     </stylesheets>
-   <children>
+    <children>
         <MenuBar layoutY="-1.0" prefHeight="45.0" prefWidth="1269.0" styleClass="menuClass">
-        <menus>
-          <Menu mnemonicParsing="false" text="Créneau Horaire">
-            <items>
-              <MenuItem fx:id="miList" mnemonicParsing="false" onAction="#goToList" text="List" />
-                  <MenuItem fx:id="goToAjout" mnemonicParsing="false" text="Ajout" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Rendez-vous">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#goToListRDV" text="List" />
-                  <MenuItem mnemonicParsing="false" onAction="#goToHistorique" text="Historique" />                  
-                  <MenuItem mnemonicParsing="false" onAction="#goToAjoutRDV" text="Prendre rendez-vous" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <AnchorPane layoutX="374.0" layoutY="152.0" prefHeight="466.0" prefWidth="522.0" style="-fx-background-color: white; -fx-background-radius: 8;">
-         <children>
-            <DatePicker fx:id="dpDate" layoutX="159.0" layoutY="190.0" onAction="#getCrByDayName" prefHeight="31.0" prefWidth="235.0" />
-            <Label layoutX="66.0" layoutY="195.0" text="Date">
-               <font>
-                  <Font name="Segoe UI Black" size="15.0" />
-               </font></Label>
-            <Label layoutX="61.0" layoutY="269.0" text="Heure">
-               <font>
-                  <Font name="Segoe UI Black" size="15.0" />
-               </font></Label>
-            <ChoiceBox fx:id="cbHeure" layoutX="159.0" layoutY="264.0" prefHeight="31.0" prefWidth="235.0" />
-            <ChoiceBox fx:id="cbPsy" layoutX="159.0" layoutY="117.0" prefHeight="31.0" prefWidth="235.0" />
-            <Label layoutX="14.0" layoutY="122.0" text="Psychologue">
-               <font>
-                  <Font name="Segoe UI Black" size="15.0" />
-               </font></Label>
-            <Button fx:id="btnValider" layoutX="199.0" layoutY="373.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="45.0" prefWidth="125.0" text="Valider" />
-            <Label layoutX="120.0" layoutY="32.0" text="Prendre un rendez-vous">
-               <font>
-                  <Font name="Segoe UI Black" size="24.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </children>
+            <menus>
+                <Menu mnemonicParsing="false" text="Créneau Horaire">
+                    <items>
+                        <MenuItem fx:id="miList" mnemonicParsing="false" onAction="#goToList" text="List" />
+                        <MenuItem fx:id="goToAjout" mnemonicParsing="false" onAction="#goToAjout" text="Ajout" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Rendez-vous">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToListRDV" text="List" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToHistorique" text="Historique" />                  
+                        <MenuItem mnemonicParsing="false" onAction="#goToAjoutRDV" text="Prendre rendez-vous" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToStatistique" text="Statistique" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ImageView fitHeight="625.0" fitWidth="1265.0" layoutX="2.0" layoutY="227.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/footer-bg.png" />
+            </image>
+        </ImageView>
+      <ImageView fitHeight="314.0" fitWidth="148.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/banner-left-dec.png" />
+         </image>
+      </ImageView>
+        <AnchorPane layoutX="374.0" layoutY="152.0" prefHeight="466.0" prefWidth="522.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+            <children>
+                <DatePicker fx:id="dpDate" layoutX="159.0" layoutY="190.0" onAction="#getCrByDayName" prefHeight="31.0" prefWidth="235.0" />
+                <Label layoutX="66.0" layoutY="195.0" text="Date">
+                    <font>
+                        <Font name="Segoe UI Black" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="61.0" layoutY="269.0" text="Heure">
+                    <font>
+                        <Font name="Segoe UI Black" size="15.0" />
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="cbHeure" layoutX="159.0" layoutY="264.0" prefHeight="31.0" prefWidth="235.0" />
+                <ChoiceBox fx:id="cbPsy" layoutX="159.0" layoutY="117.0" prefHeight="31.0" prefWidth="235.0" />
+                <Label layoutX="14.0" layoutY="122.0" text="Psychologue">
+                    <font>
+                        <Font name="Segoe UI Black" size="15.0" />
+                    </font>
+                </Label>
+                <Button fx:id="btnValider" layoutX="199.0" layoutY="373.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="45.0" prefWidth="125.0" text="Valider" />
+                <Label layoutX="120.0" layoutY="32.0" text="Prendre un rendez-vous">
+                    <font>
+                        <Font name="Segoe UI Black" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="210.0" fitWidth="167.0" layoutX="1100.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/323804567_721260959623274_1245068995679338409_n%20(3).png" />
+            </image>
+        </ImageView>
+    </children>
 </AnchorPane>

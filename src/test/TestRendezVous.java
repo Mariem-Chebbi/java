@@ -33,9 +33,9 @@ public class TestRendezVous {
         RendezVous rdv2 = new RendezVous(220L,LocalDate.of(2023, 5, 19), 12, client, psy);
         service.ajouter(rdv);
         service.supprimer(rdv2);
-        System.out.println(service.afficher(1L));
+        System.out.println(service.afficher(2L));
         
-        System.out.println(service.historique(1L));
+        System.out.println(service.historique(2L));
         
         
 
