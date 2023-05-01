@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="0.0" prefWidth="1269.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.NavbarController">
+    <stylesheets>
+        <URL value="@navbar.css" />
+    </stylesheets>
+    <children>
+        <MenuBar fx:id="navbar" prefHeight="50.0" prefWidth="1269.0" style="-fx-border-radius: 10; -fx-background-color: E7B9FF; -fx-background-radius: 10;" styleClass="menuClass">
+            <menus>
+            <Menu mnemonicParsing="false" style="-fx-background-color: E7B9FF;">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: E7B9FF; -fx-background-radius: 10;">
+                     <image>
+                        <Image url="@../../gui/images/logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
+                <Menu mnemonicParsing="false" style="-fx-background-color: E7B9FF;" text="Rendez-vous">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToListRDV" text="List" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToHistorique" text="Historique" />                  
+                        <MenuItem mnemonicParsing="false" onAction="#goToAjoutRDV" text="Prendre rendez-vous" />
+                        <MenuItem mnemonicParsing="false" onAction="#goToStatistique" text="Statistique" />
+                    </items>
+                </Menu>
+            <Menu mnemonicParsing="false" style="-fx-background-color: E7B9FF;" text="Créneau Horaire">
+               <items>
+                  <MenuItem fx:id="miList1" mnemonicParsing="false" onAction="#goToList" text="List" />
+                  <MenuItem fx:id="goToAjout1" mnemonicParsing="false" onAction="#goToAjout" text="Ajout" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" style="-fx-background-color: E7B9FF;" text="Connexion">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToConnexion" text="Se Connecter" />
+
+                       
+                    </items>
+                </Menu>
+                 <Menu mnemonicParsing="false" style="-fx-background-color: E7B9FF;" text="Inscription">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#goToInscription" text="S'inscrire" />
+
+                       
+                    </items>
+                </Menu>
+            </menus>
+            
+        </MenuBar>
+    </children>
+</AnchorPane>

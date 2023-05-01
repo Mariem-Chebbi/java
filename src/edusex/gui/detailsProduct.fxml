@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" prefHeight="708.0" prefWidth="1022.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.DetailsProductController">
+   <children>
+      <ImageView fx:id="imgProd" fitHeight="623.0" fitWidth="469.0" layoutX="36.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="labelProd" layoutX="538.0" layoutY="107.0" prefHeight="56.0" prefWidth="413.0" text="Label">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Button fx:id="favorisBtn" layoutX="538.0" layoutY="501.0" mnemonicParsing="false" onAction="#addFavoris" prefHeight="39.0" prefWidth="374.0" style="-fx-background-color: #86bae2eb;" text="Ajouter a ma liste de favoris" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="reserverBtn" layoutX="538.0" layoutY="575.0" mnemonicParsing="false" onAction="#reserver" prefHeight="39.0" prefWidth="374.0" style="-fx-background-color: #86bae2eb;" text="reserver" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <TextField fx:id="idProduct" layoutX="492.0" layoutY="35.0" opacity="0.0" />
+      <Label fx:id="descProd" layoutX="538.0" layoutY="196.0" prefHeight="120.0" prefWidth="307.0" text="Label">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="backBtn" layoutX="897.0" layoutY="22.0" mnemonicParsing="false" onAction="#retour" prefHeight="32.0" prefWidth="109.0" style="-fx-background-color: #86bae2eb;" text="retour" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="datePICK" layoutX="538.0" layoutY="348.0" opacity="0.0" prefHeight="32.0" prefWidth="374.0" />
+      <TextField fx:id="quentTF" layoutX="538.0" layoutY="413.0" opacity="0.0" prefHeight="32.0" prefWidth="374.0" promptText="saisire la quentite" />
+      <Button fx:id="confirmerReservationBtn" layoutX="538.0" layoutY="502.0" mnemonicParsing="false" onAction="#confirmerReservation" opacity="0.0" prefHeight="39.0" prefWidth="374.0" style="-fx-background-color: #86bae2eb;" text="Confirmer la reservation" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="favorisBtnRM" layoutX="538.0" layoutY="502.0" mnemonicParsing="false" onAction="#removeFavoris" prefHeight="39.0" prefWidth="374.0" style="-fx-background-color: #86bae2eb;" text="Supprimer de ma liste de  favoris" textFill="WHITE" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Rating fx:id="rating" layoutX="538.0" layoutY="637.0" prefHeight="32.0" prefWidth="225.0" />
+      <Label fx:id="ratingAVG" layoutX="745.0" layoutY="637.0" prefHeight="39.0" prefWidth="165.0" text="Label">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

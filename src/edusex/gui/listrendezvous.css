@@ -1,0 +1,75 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+}
+
+ChoiceBox {
+    -fx-font:'Roboto', sans-serif;
+    -fx-font-size: 1.2rem;
+    -fx-margin: 0 auto;
+    -fx-padding: 1.5rem 2rem;
+    -fx-border-radius: 0.2rem;
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-width: 90%;
+    -fx-transition: all 0.3s;
+}
+Button {
+    -fx-padding: 10px, 30px;
+    -fx-background-color: white;
+    -fx-text-fill:  rgba(155,87,246,1);
+    -fx-font-weight: 900;
+    -fx-border-color: rgba(155,87,246,1);
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-box-border: none;
+    -fx-focus-color: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10px;
+}
+
+.menu-bar {
+    -fx-background-color: white;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 5);
+}
+
+/* Menu style */
+.menu {
+    -fx-background-color: white;
+    -fx-text-fill: #ffffff;
+}
+
+/* Menu item style */
+.menu-item {
+    -fx-text-fill: #ffffff;
+}
+
+/* Hover state style */
+.menu-item:hover {
+    -fx-background-color: #B5B8FC;
+}
+
+/* Active state style */
+.menu-item:focused,
+.menu-item:showing {
+    -fx-background-color: #B5B8FC;
+}
+
+.search-field {
+    -fx-background-color: #ffffff; /* Couleur de fond */
+    -fx-border-color: #cccccc; /* Couleur de bordure */
+    -fx-border-radius: 20; /* Rayon de bordure */
+    -fx-font-size: 16px; /* Taille de police */
+    -fx-prompt-text-fill: #999999; /* Couleur du texte d'invite */
+    -fx-text-fill: #333333; /* Couleur du texte */
+}
+
+
+
+

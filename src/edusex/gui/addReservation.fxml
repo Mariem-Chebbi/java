@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AddReservationController">
+   <items>
+      <AnchorPane prefHeight="715.0" prefWidth="1075.0" style="-fx-background-color: #f3f3f4;">
+         <children>
+             <fx:include fx:id="navBar" source="SideBar.fxml" />
+            <Label layoutX="203.0" layoutY="203.0" prefHeight="27.0" prefWidth="70.0" text="Produit : ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="273.0" prefHeight="25.0" prefWidth="76.0" text="Quantité : ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="210.0" layoutY="345.0" prefHeight="25.0" prefWidth="56.0" text="Date : ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="206.0" layoutY="117.0" text="Ajouter une Reservation ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="backBTN" layoutX="943.0" layoutY="19.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #1ab394;" text="Retour" textFill="WHITE" />
+            <TableView fx:id="tab" layoutX="584.0" layoutY="162.0" onMouseClicked="#choisirProduit" prefHeight="532.0" prefWidth="477.0">
+               <columns>
+                  <TableColumn fx:id="idCOL" prefWidth="36.0" text="ID" visible="false" />
+                  <TableColumn fx:id="clientCOL" prefWidth="96.0" text="Client" />
+                  <TableColumn fx:id="prodCOL" prefWidth="112.0" text="Produit" />
+                  <TableColumn fx:id="quentCOL" prefWidth="56.79998779296875" text="Quentité" />
+                  <TableColumn fx:id="dateCOL" prefWidth="120.7999267578125" text="Date" />
+                  <TableColumn fx:id="etatCOL" prefWidth="92.7999267578125" text="Etat" />
+               </columns>
+            </TableView>
+            <Separator layoutX="544.0" layoutY="59.0" orientation="VERTICAL" prefHeight="689.0" prefWidth="6.0" />
+            <Separator layoutX="149.0" layoutY="48.0" prefHeight="25.0" prefWidth="925.0" />
+            <Separator layoutX="149.0" layoutY="14.0" prefHeight="3.0" prefWidth="925.0" />
+            <Label layoutX="584.0" layoutY="117.0" text="Liste des Reservations">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="179.0" layoutY="22.0" text="Les Reservations">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="produitDBX" layoutX="289.0" layoutY="204.0" prefHeight="25.0" prefWidth="219.0" />
+            <DatePicker fx:id="datePICK" layoutX="290.0" layoutY="345.0" prefHeight="25.0" prefWidth="219.0" />
+            <Button fx:id="submitBTN" layoutX="215.0" layoutY="560.0" mnemonicParsing="false" onAction="#ajouterReservation" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Enregistrer" textFill="WHITE" />
+            <Button fx:id="cancelBTN" layoutX="215.0" layoutY="608.0" mnemonicParsing="false" onAction="#reset" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Annuler" textFill="WHITE" />
+            <Button fx:id="suppbtn" layoutX="214.0" layoutY="655.0" mnemonicParsing="false" onAction="#supReservation" opacity="0.0" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Supprimer" textFill="WHITE" />
+            <Button fx:id="modifbtn" layoutX="216.0" layoutY="562.0" mnemonicParsing="false" onAction="#modifierReservation" opacity="0.0" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #1ab394;" text="Modifier" textFill="WHITE" />
+            <Label layoutX="214.0" layoutY="415.0" prefHeight="27.0" prefWidth="56.0" text="Etat : ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="13.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="etatDBX" layoutX="289.0" layoutY="416.0" prefHeight="25.0" prefWidth="219.0" />
+            <TextField fx:id="quentTF" layoutX="290.0" layoutY="273.0" prefHeight="25.0" prefWidth="219.0" />
+            <Button fx:id="statBtn" layoutX="943.0" layoutY="113.0" mnemonicParsing="false" onAction="#stat" prefHeight="34.0" prefWidth="118.0" style="-fx-background-color: #1ab394;" text="Statestique" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

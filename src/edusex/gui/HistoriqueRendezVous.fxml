@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="770.0" prefWidth="1269.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.HistoriqueRendezVousController">
+    <stylesheets>
+        <URL value="@historiquerendezvous.css" />
+    </stylesheets>
+    <children>
+        <fx:include source="Navbar.fxml" fx:id="navBar"/>
+        <ImageView fitHeight="625.0" fitWidth="1265.0" layoutX="2.0" layoutY="227.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../gui/images/footer-bg.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="196.0" fitWidth="202.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../gui/images/banner-right-dec.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="210.0" fitWidth="167.0" layoutX="1100.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../gui/images/323804567_721260959623274_1245068995679338409_n%20(3).png" />
+            </image>
+        </ImageView>
+        <Button layoutX="364.0" layoutY="252.0" mnemonicParsing="false" onAction="#triDesc" text="▼" textFill="#5db5a1" />
+        <Button layoutX="315.0" layoutY="252.0" mnemonicParsing="false" onAction="#triAsc" prefHeight="31.0" prefWidth="33.0" text="▲" textFill="#5db5a1" />
+        <TableView fx:id="tv" layoutX="149.0" layoutY="317.0" prefHeight="210.0" prefWidth="995.0" AnchorPane.bottomAnchor="243.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="317.0">
+            <columns>
+                <TableColumn fx:id="ColId" prefWidth="58.0" text="N°" visible="false" />
+                <TableColumn fx:id="colPsy" prefWidth="168.99996948242188" text="Psychologue" />
+                <TableColumn fx:id="colDate" prefWidth="121.0" text="Date" />
+                <TableColumn fx:id="ColHeure" prefWidth="195.0" text="Heure" />
+            </columns>
+        </TableView>
+        <Button layoutX="1160.0" layoutY="482.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer" />
+        <TextField fx:id="tfSearch" layoutX="622.0" layoutY="254.0" onKeyPressed="#recherche_avance" prefHeight="41.0" prefWidth="343.0" promptText="Chercher" style="-fx-border-color: rgba(155,87,246,1); -fx-border-width: 2;" styleClass="search-field" />
+        <Pagination fx:id="pagination" layoutX="133.0" layoutY="311.0" prefHeight="280.0" prefWidth="1017.0" AnchorPane.bottomAnchor="179.0" AnchorPane.leftAnchor="133.0" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="311.0" />
+        <Label layoutX="198.0" layoutY="263.0" text="Tri par Date">
+            <font>
+                <Font name="Segoe UI Bold" size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="405.0" layoutY="140.0" text="Historique de mes rendez-vous">
+            <font>
+                <Font name="Segoe UI Black" size="30.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

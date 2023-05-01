@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AfficherBlogController">
+    <children>
+
+        <ScrollPane hmax="11.0" hmin="5.0" hvalue="1.0" layoutY="-4.0" prefHeight="594.0" prefWidth="1269.0">
+            <content>
+                <AnchorPane prefHeight="604.0" prefWidth="1269.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);" stylesheets="@afficherblog.css">
+                    <children>
+                        <AnchorPane prefHeight="602.0" prefWidth="1269.0">
+                            <children>
+                                <fx:include fx:id="navBar" source="Navbar.fxml" />
+                                <GridPane fx:id="gridProduit" layoutX="226.0" layoutY="149.0" prefHeight="374.0" prefWidth="722.0" style="-fx-background-image: url;">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="595.4000183105469" minWidth="10.0" prefWidth="418.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="478.60003662109375" minWidth="10.0" prefWidth="450.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="383.1999877929687" minHeight="-Infinity" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                </GridPane>
+                                <Text layoutX="499.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LES BLOGS" wrappingWidth="160.7366943359375">
+                                    <font>
+                                        <Font name="Segoe UI Black" size="30.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="tf_recherche" layoutX="950.0" layoutY="90.0" promptText="chercher ..." style="-fx-border-color: rgba(155,87,246,1); -fx-border-width: 2;" />
+                                <Button layoutX="1173.0" layoutY="90.0" mnemonicParsing="false" onAction="#chercher" text="chercher" />
+                                <Button layoutX="182.0" layoutY="89.0" mnemonicParsing="false" onAction="#date" text="trie date" />
+                                <Button layoutX="78.0" layoutY="88.0" mnemonicParsing="false" onAction="#lib" text="trie libelle" />
+                                <Button fx:id="notrie" layoutX="287.0" layoutY="88.0" mnemonicParsing="false" onAction="#notrie" text="annuler trie" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

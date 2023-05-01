@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1269.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AfficherCertificationController">
+    <children>
+       
+        <ScrollPane hmax="11.0" hmin="5.0" hvalue="1.0" layoutX="-2.0" layoutY="1.0" prefHeight="770.0" prefWidth="1269.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);">
+            <content>
+                <AnchorPane prefHeight="753.0" prefWidth="1224.0" style="-fx-background-image: url(&quot;/edusex/gui/bg.png&quot;);">
+                    <children>
+                        <fx:include fx:id="navBar" source="Navbar.fxml" />
+                        <ImageView fitHeight="625.0" fitWidth="1265.0" layoutX="2.0" layoutY="227.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../gui/images/footer-bg.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="483.0" layoutY="114.0" prefHeight="46.0" prefWidth="303.0" text="Mes certifications" textAlignment="CENTER" textFill="#dc8cdb">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="31.0" />
+                            </font>
+                        </Label>
+                        <Pagination fx:id="pagination" layoutX="215.0" layoutY="223.0" maxPageIndicatorCount="5" pageCount="10" prefHeight="374.0" prefWidth="840.0" />
+                        <ImageView fx:id="img" fitHeight="280.0" fitWidth="457.0" layoutX="406.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

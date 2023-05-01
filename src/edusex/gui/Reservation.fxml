@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="471.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.ReservationController">
+   <children>
+      <Pane layoutY="25.0" prefHeight="428.0" prefWidth="358.0">
+         <children>
+            <ImageView fx:id="imageview" fitHeight="269.0" fitWidth="335.0" layoutX="12.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="nomProduirLabel" layoutX="10.0" layoutY="288.0" prefHeight="32.0" prefWidth="346.0" text="Label">
+               <font>
+                  <Font name="Arial Black" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="descriptionLabel" layoutX="12.0" layoutY="328.0" prefHeight="26.0" prefWidth="259.0" text="Label">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="participerEventButton" layoutX="14.0" layoutY="363.0" mnemonicParsing="false" onAction="#showDetails" onMouseClicked="#participerEvent" prefHeight="32.0" prefWidth="136.0" style="-fx-background-color: #86bae2eb;" text="plus de détails" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TextField fx:id="idProduct" layoutX="162.0" layoutY="342.0" opacity="0.0" />
+            <Label fx:id="rating" layoutX="183.0" layoutY="357.0" prefHeight="45.0" prefWidth="149.0" text="Label">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="qtLab" layoutX="183.0" layoutY="325.0" prefHeight="32.0" prefWidth="103.0" text="Label">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idid" layoutX="179.0" layoutY="33.0" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
