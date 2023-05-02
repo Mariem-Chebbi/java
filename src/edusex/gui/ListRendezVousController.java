@@ -32,6 +32,7 @@ import javafx.stage.Stage;
 import edusex.services.ServiceRendezVous;
 import edusex.utils.SMSSender;
 import edusex.utils.WhatsAppSender;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -45,25 +46,20 @@ public class ListRendezVousController implements Initializable {
      */
     @FXML
     private AnchorPane root;
-    @FXML
     TableView<RendezVous> tv = new TableView<>();
     ObservableList<RendezVous> observableList;
-    @FXML
     private TableColumn<RendezVous, Integer> ColId;
-    @FXML
     private TableColumn<RendezVous, User> colPsy;
 
-    @FXML
     private TableColumn<RendezVous, LocalDate> colDate;
 
-    @FXML
     private TableColumn<RendezVous, Integer> ColHeure;
 
-    @FXML
     private TextField tfSearch;
 
-    @FXML
     private Pagination pagination;
+    @FXML
+    private ImageView RDV;
 
     public void lister() {
         User user = new User(2);
@@ -75,7 +71,6 @@ public class ListRendezVousController implements Initializable {
         tv.setItems(observableList);
     }
 
-    @FXML
     private void goToList(ActionEvent event) throws IOException {
         Parent settingsParent = FXMLLoader.load(getClass().getResource("ListCreneauHoraire.fxml"));
         Scene settingsScene = new Scene(settingsParent);
@@ -86,7 +81,6 @@ public class ListRendezVousController implements Initializable {
 
     }
 
-    @FXML
     private void goToAjout(ActionEvent event) throws IOException {
         Parent settingsParent = FXMLLoader.load(getClass().getResource("AjoutCreneauHoraire.fxml"));
         Scene settingsScene = new Scene(settingsParent);
@@ -97,7 +91,6 @@ public class ListRendezVousController implements Initializable {
 
     }
 
-    @FXML
     private void goToAjoutRDV(ActionEvent event) throws IOException {
         Parent settingsParent = FXMLLoader.load(getClass().getResource("AjoutRendezVous.fxml"));
         Scene settingsScene = new Scene(settingsParent);
@@ -107,7 +100,6 @@ public class ListRendezVousController implements Initializable {
         appStage.show();
     }
 
-    @FXML
     private void goToListRDV(ActionEvent event) throws IOException {
         Parent settingsParent = FXMLLoader.load(getClass().getResource("ListRendezVous.fxml"));
         Scene settingsScene = new Scene(settingsParent);
@@ -117,7 +109,6 @@ public class ListRendezVousController implements Initializable {
         appStage.show();
     }
 
-    @FXML
     private void goToHistorique(ActionEvent event) throws IOException {
         Parent settingsParent = FXMLLoader.load(getClass().getResource("HistoriqueRendezVous.fxml"));
         Scene settingsScene = new Scene(settingsParent);
@@ -127,7 +118,6 @@ public class ListRendezVousController implements Initializable {
         appStage.show();
     }
 
-    @FXML
     private void goToStatistique(ActionEvent event) throws IOException {
         Parent settingsParent = FXMLLoader.load(getClass().getResource("Statistique.fxml"));
         Scene settingsScene = new Scene(settingsParent);
@@ -141,7 +131,6 @@ public class ListRendezVousController implements Initializable {
         return this.tv.getSelectionModel().getSelectedItem();
     }
 
-    @FXML
     private void supprimer(ActionEvent event) {
         String msg = "";
         ServiceRendezVous service = new ServiceRendezVous();
@@ -154,7 +143,6 @@ public class ListRendezVousController implements Initializable {
         lister();
     }
 
-    @FXML
     private void recherche_avance(KeyEvent event) {
         FilteredList<RendezVous> filtereddata = new FilteredList<>(observableList, b -> true);
         System.out.println(tfSearch.getText());
@@ -185,7 +173,6 @@ public class ListRendezVousController implements Initializable {
         tv.setItems(filtereddata);
     }
 
-    @FXML
     public void triAsc(ActionEvent event) {
         ObservableList<RendezVous> listASC = FXCollections.observableArrayList();
         User user = new User(2);
@@ -196,7 +183,6 @@ public class ListRendezVousController implements Initializable {
         tv.setItems(listASC);
     }
     
-    @FXML
     public void triDesc(ActionEvent event) {
         ObservableList<RendezVous> listASC = FXCollections.observableArrayList();;
         User user = new User(2);

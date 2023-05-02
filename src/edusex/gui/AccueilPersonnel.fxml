@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="770.0" prefWidth="1269.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edusex.gui.AccueilController">
+   <stylesheets>
+      <URL value="@listrendezvous.css" />
+   </stylesheets>
+   <children>
+      <ImageView fitHeight="625.0" fitWidth="1265.0" layoutX="2.0" layoutY="227.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../gui/images/footer-bg.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="549.0" layoutY="77.0" prefHeight="79.0" prefWidth="171.0" text="Menu ">
+         <font>
+            <Font name="Segoe UI Black" size="55.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="196.0" fitWidth="202.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../gui/images/banner-right-dec.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="125.0" fitWidth="125.0" layoutX="348.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eduSex/src/gui/images/1682871932.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="RDV" disable="true" fitHeight="125.0" fitWidth="125.0" layoutX="582.0" layoutY="220.0" onMouseClicked="#goToListRDV" pickOnBounds="true" preserveRatio="true" styleClass="mainFxmlClass">
+         <image>
+            <Image url="@../../../../eduSex/src/gui/images/1682871854.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="125.0" fitWidth="104.0" layoutX="805.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../eduSex/src/gui/images/1682871956.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="383.0" layoutY="357.0" text="Blog">
+         <font>
+            <Font name="Segoe UI Black" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="587.0" layoutY="357.0" text="Rendez-vous">
+         <font>
+            <Font name="Segoe UI Black" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="829.0" layoutY="357.0" text="Produit">
+         <font>
+            <Font name="Segoe UI Black" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
