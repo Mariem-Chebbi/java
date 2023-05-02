@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/entity/Centre.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/AjoutercentreController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/OneReclamationviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/OnereponseviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/ModifierserviceController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/services/ReclamationService.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/centreview.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/ajoutercentre.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/serviceview.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/oneserviceview.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/entity/Service.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/modifiercentre.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/AjouterserviceController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/modifierservice.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/AjouterreclamationController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/OnecentreviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/ReclamationviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/ModifierReponserecController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/yassine/Yassine.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/OneserviceviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/ajouterservice.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/CentreviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/ModifiercentreController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/yassine/MyListener.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/services/ServiceService.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/services/CentreService.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/ModifierReclamationController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/utilites/style.css</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Interface/onecentreview.fxml</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/utilites/MaConnexion.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/serviceviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/reponseviewController.java</file>
+            <file>file:/C:/Users/ala20/OneDrive/Bureau/PROJECT2/src/edu/devapps/Controller/AjoutereponserecController.java</file>
+        </group>
+    </open-files>
+</project-private>
